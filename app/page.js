@@ -3,6 +3,7 @@ import Head from "next/head";
 import FlightList from "./components/FlightList";
 import BookTicket from "./components/BookTicket"; // Шлях до вашого компонента BookTicket
 import PaymentForm from "./components/PaymentForm";
+import SuccessMessage from "./components/SuccessMessage";
 
 const HomePage = () => {
   return (
@@ -30,7 +31,8 @@ const HomePage = () => {
       <div style={{ padding: "20px" }}>
         {/*<h1>Available Flights</h1>*/}
         {/*<FlightList /> { Додаємо компонент FlightList */}
-        <PaymentForm />
+        {/*<PaymentForm />*/}
+        <SuccessMessage />
       </div>
 
       {/* Додаємо компонент BookTicket 
