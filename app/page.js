@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import SearchFlights from "./components/SearchFlights";
+import React from 'react';
+import Head from 'next/head';
+import BookTicket from './components/BookTicket'; // Шлях до вашого компонента BookTicket
 
 const HomePage = () => {
   return (
@@ -13,15 +13,17 @@ const HomePage = () => {
       </Head>
       <h1 style={{ 
           textAlign: 'center', 
-          marginTop: '40px', 
-          fontFamily: 'Montserrat, sans-serif', // Встановлюємо шрифт
-          fontSize: '48px', // Збільшуємо розмір шрифту
-          fontWeight: '700' // Змінюємо товщину шрифту
+          marginTop: '20px', 
+          fontFamily: 'Montserrat, sans-serif', 
+          fontSize: '48px', 
+          fontWeight: '700' 
         }}>
         Book Your Tickets Now!
       </h1>
+      
+      {/* Додаємо компонент BookTicket */}
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <SearchFlights />
+        <BookTicket />
       </div>
     </div>
   );
