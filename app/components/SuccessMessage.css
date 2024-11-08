@@ -1,0 +1,44 @@
+.success-message-container {
+    display: flex; /* Using Flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Space between content and button */
+    align-items: center; /* Center elements horizontally */
+    height: 60vh; /* Reduced height */
+    width: 450px; /* Fixed width for the container */
+    margin: 0 auto; /* Centering the container */
+    background-color: #e0f7fa; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding: 20px; /* Inner padding */
+}
+
+.content {
+    flex-grow: 1; /* Allow content to grow and take available space */
+    display: flex; /* Using Flexbox for centering content */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+}
+
+.success-icon {
+    font-size: 36px; /* Smaller size for the icon */
+    color: #388e3c; /* Green color for the icon */
+    margin-bottom: 10px; /* Space below the icon */
+}
+
+h2 {
+    color: #388e3c; /* Dark green color for the title */
+    margin-bottom: 5px; /* Space below the title */
+    font-size: 20px; /* Smaller font size for the title */
+}
+
+p {
+    color: #555; /* Dark gray color for the text */
+    text-align: center; /* Center the text */
+    font-size: 14px; /* Smaller font size for the message */
+}
+
+.return-button {
+    margin-top: 15px; /* Space above the button */
+    width: 100%; /* Full width for the button */
+}
