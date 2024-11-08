@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import FlightList from "./components/FlightList";
 import BookTicket from "./components/BookTicket"; // Шлях до вашого компонента BookTicket
+import PaymentForm from "./components/PaymentForm";
 
 const HomePage = () => {
   return (
@@ -28,7 +29,8 @@ const HomePage = () => {
 
       <div style={{ padding: "20px" }}>
         {/*<h1>Available Flights</h1>*/}
-        <FlightList /> {/* Додаємо компонент FlightList */}
+        {/*<FlightList /> { Додаємо компонент FlightList */}
+        <PaymentForm />
       </div>
 
       {/* Додаємо компонент BookTicket 
