@@ -1,0 +1,85 @@
+.payment-form-container {
+    max-width: 400px; /* Maximum width of the form */
+    margin: 0 auto; /* Centering */
+    padding: 30px; /* Inner padding */
+    background: linear-gradient(135deg, #e0f7fa 30%, #a5d6a7 90%); /* Gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: transform 0.3s; /* Animation on hover */
+}
+
+.payment-form-container:hover {
+    transform: translateY(-5px); /* Lift on hover */
+}
+
+.headTitle {
+    text-align: center; /* Centering the title */
+    color: #388e3c; /* Dark green color for the title */
+    margin-bottom: 20px; /* Bottom margin */
+    font-size: 28px;
+}
+
+.payment-form .ant-form-item-label > label {
+    color: #388e3c; /* Green color for labels */
+    font-weight: bold; /* Bold font for labels */
+}
+
+.expiry-cvv-container {
+    display: flex; /* Using Flexbox for horizontal alignment */
+    justify-content: space-between; /* Distributing space between fields */
+}
+
+.expiry-item, .cvv-item {
+    flex: 1; /* Each field takes an equal part of the space */
+    margin-right: 10px; /* Right margin for the "Valid Until" field */
+}
+
+.expiry-item:last-child {
+    margin-right: 0; /* No margin for the last field */
+}
+
+.input-field {
+    border-radius: 8px; /* Rounded corners for input fields */
+    border: 1px solid #b2dfdb; /* Light green border */
+    transition: border-color 0.3s; /* Animation for border color change */
+}
+
+.input-field:focus {
+    border-color: #388e3c; /* Dark green border on focus */
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); /* Shadow on focus */
+}
+
+.button-group {
+    display: flex; /* Using Flexbox for button alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+}
+
+.submit-button {
+    background-color: #388e3c; /* Dark green color for the button */
+    border-color: #388e3c; /* Dark green border for the button */
+    width: 100%; /* Button takes full width */
+    border-radius: 8px; /* Rounded corners for the button */
+    transition: background-color 0.3s, transform 0.3s; /* Animation on hover */
+    margin-top: 10px; /* Space between buttons */
+}
+
+.submit-button:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+    border-color: #2e7d32; /* Darker border on hover */
+    transform: scale(1.05); /* Button enlarges on hover */
+}
+
+.cancel-button {
+    background-color: #b0bec5; /* Gray color for the cancel button */
+    border-color: #b0bec5; /* Gray border for the cancel button */
+    width: 100%; /* Button takes full width */
+    border-radius: 8px; /* Rounded corners for the button */
+    transition: background-color 0.3s, transform 0.3s; /* Animation on hover */
+}
+
+.cancel-button:hover {
+    background-color: #90a4ae; /* Darker gray on hover */
+    border-color: #90a4ae; /* Darker border on hover */
+    transform: scale(1.05); /* Button enlarges on hover */
+}
