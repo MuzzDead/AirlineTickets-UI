@@ -1,45 +1,38 @@
 import React from "react";
 import Head from "next/head";
-import FlightList from "./components/FlightList";
-import BookTicket from "./components/BookTicket"; // Шлях до вашого компонента BookTicket
-import PaymentForm from "./components/PaymentForm";
-import SuccessMessage from "./components/SuccessMessage";
+import SearchFlights from "./components/SearchFlights";
 
 const HomePage = () => {
+  // Inline styles for centering
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50vh', // Full viewport height
+    padding: '20px', // Optional padding
+    boxSizing: 'border-box', // Include padding in height calculation
+  };
+
+  const titleStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '40px',
+    fontSize: '32px',
+    fontWeight: 'bold'
+  };
+
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
+    <>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet"
-        />
+        <title>Flight Search</title>
+        <meta name="description" content="Search for flights" />
       </Head>
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "20px",
-          fontFamily: "Montserrat, sans-serif",
-          fontSize: "48px",
-          fontWeight: "700",
-        }}
-      >
-        Book Your Tickets Now!
-      </h1>
-
-      <div style={{ padding: "20px" }}>
-        {/*<h1>Available Flights</h1>*/}
-        {/*<FlightList /> { Додаємо компонент FlightList */}
-        {/*<PaymentForm />*/}
-        <SuccessMessage />
+      <h1 style={titleStyle}> Book your Tickets Now!</h1>
+      <div style={containerStyle}>
+        <SearchFlights />
       </div>
-
-      {/* Додаємо компонент BookTicket 
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <BookTicket />
-      </div>*/}
-    </div>
+    </>
   );
 };
 
