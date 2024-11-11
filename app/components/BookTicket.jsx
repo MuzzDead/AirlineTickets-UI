@@ -14,6 +14,7 @@ import {
 } from "antd";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from 'next/navigation'; // Перевір, що використовуєш цей імпорт
 
 const { Option } = Select;
 
@@ -27,6 +28,7 @@ const BookTicket = () => {
     email: "",
     phoneNumber: "",
   });
+  const router = useRouter();
 
   const [luggage, setLuggage] = useState(false);
   const [seat, setSeat] = useState({ column: "", row: "" });
@@ -61,6 +63,7 @@ const BookTicket = () => {
       );
       console.log("Booking successful:", response.data);
       // Додати будь-які повідомлення користувачеві або дії після успішного бронювання
+      router.push(`/payment`);
     } catch (err) {
       if (err.response && err.response.status === 400) {
         setError(err.response.data.message); // Зберігаємо помилку у стані, якщо місце зайняте

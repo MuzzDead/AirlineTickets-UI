@@ -1,11 +1,38 @@
 'use client';
 import React from 'react';
-import { Form, Input, Button, DatePicker } from 'antd';
-import './PaymentForm.css'; // Importing CSS for styling
+import { Form, Input, Button, DatePicker, message } from 'antd';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import './PaymentForm.css';
 
 const PaymentForm = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const router = useRouter(); // Ініціалізація useRouter для навігації
+
+  const onFinish = async (values) => {
+    try {
+      // Перетворення дати на формат MM/YY
+      const expirationDate = values.expiryDate.format('MM/YY');
+      
+      // Формуємо об’єкт для API
+      const paymentData = {
+        cardNumber: values.cardNumber,
+        expirationDate,
+        cvv: values.cvv,
+        phoneNumber: values.phoneNumber,
+      };
+
+      // Надсилаємо запит на сервер
+      const response = await axios.post('https://localhost:7025/api/Payment', paymentData);
+
+      if (response.status === 200) {
+        message.success(response.data); // Виводимо повідомлення про успішну оплату
+        router.push('/success'); // Перенаправлення на сторінку успіху
+      }
+    } catch (error) {
+      message.error(
+        error.response?.data || 'Something is wrong! Please, try again later!'
+      );
+    }
   };
 
   return (
@@ -34,8 +61,8 @@ const PaymentForm = () => {
           >
             <DatePicker
               picker="month"
-              format="MM/YYYY"
-              placeholder="MM/YYYY"
+              format="MM/YY"
+              placeholder="MM/YY"
               className="input-field"
             />
           </Form.Item>
