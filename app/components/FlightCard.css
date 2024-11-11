@@ -21,8 +21,8 @@
   text-align: center;
 }
 
-.price-section .ant-typography {
-  color: #FF6600;
+.price-text {
+  color: #FF6600; /* Яскраво-оранжевий для ціни */
 }
 
 .details-section {
@@ -40,26 +40,45 @@
 .flight-info {
   display: flex;
   align-items: flex-start;
-  font-size: 16px;
   gap: 8px;
 }
 
-.flight-info .icon {
+.icon {
   color: #0D92F4;
   font-size: 20px;
   margin-top: 4px;
+}
+
+.flight-time {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.flight-airport {
+  color: grey;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+}
+
+.flight-date {
+  color: gray;
+  font-size: 14px;
+  display: block;
 }
 
 .route-line {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-.route-line .ant-divider {
-  width: 150px;
-  height: 4px;
+.route-divider {
+  background-color: #0D92F4;
+  height: 5px;
+  width: 250px;
   margin: 0;
 }
 
@@ -67,4 +86,15 @@
   font-size: 14px;
   color: #FF6600;
   margin-top: 8px;
+}
+
+.ant-btn-primary {
+  background-color: #FF6600; /* Яскраво-оранжевий для кнопки */
+  border-color: #FF6600;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #e65c00; /* Трохи темніший відтінок для ховера */
+  border-color: #e65c00;
 }
