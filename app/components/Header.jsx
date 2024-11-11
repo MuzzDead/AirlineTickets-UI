@@ -1,9 +1,21 @@
 import React from "react";
-import { Layout, Menu, Button } from "antd";
+import { Layout, Button } from "antd";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const { Header } = Layout;
 
 const HeaderComponent = () => {
+  const router = useRouter();
+
+  const contact = () => {
+    router.push("/contacts");
+  };
+
+  const information = () => {
+    router.push("/information");
+  };
+
   return (
     <Header
       style={{
@@ -14,18 +26,22 @@ const HeaderComponent = () => {
         padding: "0 50px",
       }}
     >
-      <div
-        style={{
-          color: "white",
-          fontSize: "24px",
-          fontFamily: "Montserrat, sans-serif",
-        }}
-      >
-        AirlineTickets
-      </div>
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <div
+          style={{
+            color: "white",
+            fontSize: "24px",
+            fontFamily: "Montserrat, sans-serif",
+          }}
+        >
+          AirlineTickets
+        </div>
+      </Link>
       <div>
-        <Button
+        {/* Uncomment this button if you want to enable the Contacts button */}
+        {/* <Button
           type="link"
+          onClick={contact}
           style={{
             color: "white",
             fontSize: "16px",
@@ -34,15 +50,16 @@ const HeaderComponent = () => {
           }}
           onMouseEnter={(e) =>
             (e.currentTarget.style.backgroundColor = "#0b84de")
-          } // Зміна кольору при наведенні
+          } // Change color on hover
           onMouseLeave={(e) =>
             (e.currentTarget.style.backgroundColor = "#0D92F4")
-          } // Повернення кольору при виході
+          } // Revert color on mouse leave
         >
           Contacts
-        </Button>
+        </Button> */}
         <Button
           type="link"
+          onClick={information}
           style={{
             color: "white",
             fontSize: "16px",
@@ -51,10 +68,10 @@ const HeaderComponent = () => {
           }}
           onMouseEnter={(e) =>
             (e.currentTarget.style.backgroundColor = "#0b84de")
-          } // Зміна кольору при наведенні
+          } // Change color on hover
           onMouseLeave={(e) =>
             (e.currentTarget.style.backgroundColor = "#0D92F4")
-          } // Повернення кольору при виході
+          } // Revert color on mouse leave
         >
           Information
         </Button>
